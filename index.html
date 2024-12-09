@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Font Link for Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <title>Unix Social Boost</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="./image/favicon.png" type="image/png">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img align="left" src="./image/logo.jpg" class="logo2"><h1>Unix Social Boost</h1>
+        </div>
+    </header>
+
+    <!-- Image Carousel Section -->
+    <section id="carousel" class="hero-section">
+        <div class="carousel-images">
+            <img src="./image/image1.jpg" alt="Image 1" class="carousel-image">
+            <img src="./image/image2.jpg" alt="Image 2" class="carousel-image">
+            <img src="./image/image3.jpg" alt="Image 3" cl="carousel-image">
+        </div>
+    </section>
+
+    <!-- Price Calculator Section -->
+    <section id="price-calculator">
+      <marquee>
+         <h3>just check on the category...HAPPY RESELLING!! </h3>
+      </marquee>
+       
+        <form id="orderForm">
+            <label for="service">Choose Service</label>
+            <select id="service" onchange="updateServiceDetails()">
+                <option value="5000" data-description="Instagram Followers (Tsh 5,000 per 1000)">
+                    Instagram Followers
+                </option>
+                <option value="8000" data-description="Facebook Likes (Tsh 8,000 per 1000)">
+                    Facebook Likes
+                </option>
+                <option value="7000" data-description="Twitter Followers (Tsh 7,000 per 1000)">
+                    Twitter Followers
+                </option>
+                <option value="10000" data-description="YouTube Subscribers (Tsh 10,000 per 1000)">
+                    YouTube Subscribers
+                </option>
+            </select>
+
+            <p id="service-description">Instagram Followers (Tsh 5,000 per 1000)</p>
+            
+            
+             <label for="quantity">Enter | Paste Link</label>
+            <input type="text" placeholder="Paste link" required>
+
+            <label for="quantity">Enter Quantity</label>
+            <input type="number" id="quantity" min="1" placeholder="Enter quantity" required>
+
+            <label for="payment-reference">Payment Reference (e.g., Transaction ID)</label>
+            <input type="text" id="payment-reference" placeholder="Enter your payment reference" required>
+
+            <label for="payment-screenshot">Upload Payment Screenshot</label>
+            <input type="file" id="payment-screenshot" accept="image/*" required>
+
+           
+        </form>
+
+        <p><strong>Charge :</strong> Tsh <span id="total-price">0.00</span></p>
+        
+        <tablet>
+          <tr>
+            <td> <button type="button" onclick="calculatePrice()">Calculate Price</button></td>
+            
+            <td><button type="button" onclick="placeOrder()" style="background-color:#0000FF;">Place Order</button></td>
+          </tr>
+        </tablet>
+    </section>
+    
+<!-- Chatbot Icon (Robot) -->
+    <div class="chatbot-icon" id="chatbot-icon" onclick="openChatbot()">
+        <img src="https://img.icons8.com/ios/452/robot.png" alt="Chatbot" class="robot-icon">
+    </div>
+
+    <!-- Chatbot Message Area -->
+    <div id="chatbot-container" class="chatbot-container" style="display: none;">
+        <button class="close-chatbot-btn" onclick="closeChatbot()"  style="width:100%;">Close</button>
+        <div id="chatbot-messages" class="chatbot-messages"></div>
+        <input type="text" id="user-input" placeholder="Tafadhali andika hapa..." onkeyup="handleUserInput(event)">
+        <button onclick="sendUserMessage()">Tuma</button>
+    </div>
+
+    <script src="script.js"></script>
+    
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2024 Unix Social boost. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
